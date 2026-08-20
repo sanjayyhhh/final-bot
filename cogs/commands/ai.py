@@ -574,7 +574,7 @@ class AI (commands .Cog ):
 
                 system_context .append ({
                 "role":"system",
-                "content":"You are a Discord bot with many features including moderation, entertainment, music, games, AI capabilities, and utilities. Support server: PASTE_YOUR_OWN_SUPPORT_SERVER_INVITE_HERE"
+                "content":"You are a Discord bot with many features including moderation, entertainment, music, games, AI capabilities, and utilities. Support server: https://discord.gg/5pr8gF3T5p"
                 })
             else :
 
@@ -586,7 +586,7 @@ You have a caring, helpful personality and can remember conversations with users
 
 Be natural, conversational, and genuine in your responses. Don't be overly formal or robotic. Use the conversation history to provide personalized responses that feel like talking to a real friend who happens to be very knowledgeable and helpful.
 
-Support server: PASTE_YOUR_OWN_SUPPORT_SERVER_INVITE_HERE"""
+Support server: https://discord.gg/5pr8gF3T5p"""
                 })
 
 
