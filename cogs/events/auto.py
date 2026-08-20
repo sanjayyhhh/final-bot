@@ -23,7 +23,7 @@ class Autorole(Cog):
                 embed.set_author(name=f"{guild.name}", icon_url=guild.me.display_avatar.url)
                
                 website_button = Button(label='Website', style=discord.ButtonStyle.link, url='https://.vercel.app')
-                support_button = Button(label='Support', style=discord.ButtonStyle.link, url='PASTE_YOUR_OWN_SUPPORT_SERVER_INVITE_HERE')
+                support_button = Button(label='Support', style=discord.ButtonStyle.link, url='https://discord.gg/5pr8gF3T5p')
                 vote_button = Button(label='Vote for Me', style=discord.ButtonStyle.link, url=f'https://top.gg/bot/{self.bot.user.id}/vote')
                 view = View()
                 view.add_item(support_button)
