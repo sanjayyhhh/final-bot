@@ -324,7 +324,7 @@ class Music(commands.Cog):
                     ended.set_footer(text="Thanks for choosing NEON~V2!")
                     support = Button(label='Support',
                                  style=discord.ButtonStyle.link,
-                        url=f'PASTE_YOUR_OWN_SUPPORT_SERVER_INVITE_HERE')
+                        url=f'https://discord.gg/5pr8gF3T5p')
                     vote = Button(label='Vote',
                                  style=discord.ButtonStyle.link,
                         url=f'https://top.gg/bot//vote')
@@ -410,7 +410,7 @@ class Music(commands.Cog):
                 ended.set_author(name="Queue Ended", icon_url=self.client.user.avatar.url)
                 support = Button(label='Support',
                              style=discord.ButtonStyle.link,
-                    url=f'PASTE_YOUR_OWN_SUPPORT_SERVER_INVITE_HERE')
+                    url=f'https://discord.gg/5pr8gF3T5p')
                 vote = Button(label='Vote',
                              style=discord.ButtonStyle.link,
                     url=f'https://top.gg/bot//vote')
@@ -456,7 +456,7 @@ class Music(commands.Cog):
 
         if isinstance(tracks, wavelink.Playlist):
             await vc.queue.put_wait(tracks.tracks)
-            await ctx.send(embed=discord.Embed(description=f"➕ Added playlist [{tracks.name}](PASTE_YOUR_OWN_SUPPORT_SERVER_INVITE_HERE) with **{len(tracks.tracks)} songs** to the queue.", color=0xFF0000))
+            await ctx.send(embed=discord.Embed(description=f"➕ Added playlist [{tracks.name}]({getattr(tracks, 'uri', None) or 'https://discord.gg/5pr8gF3T5p'}) with **{len(tracks.tracks)} songs** to the queue.", color=0xFF0000))
             if not vc.playing:
                 track = await vc.queue.get_wait()
                 await vc.play(track)
@@ -464,7 +464,7 @@ class Music(commands.Cog):
         else:
             track = tracks[0]
             await vc.queue.put_wait(track)
-            await ctx.send(embed=discord.Embed(description=f"➕   Added [{track.title}](PASTE_YOUR_OWN_SUPPORT_SERVER_INVITE_HERE) to the queue.", color=0xFF0000))
+            await ctx.send(embed=discord.Embed(description=f"➕   Added [{track.title}]({track.uri}) to the queue.", color=0xFF0000))
             if not vc.playing:
                 await vc.play(await vc.queue.get_wait())
                 await self.display_player_embed(vc, track, ctx)
@@ -493,7 +493,7 @@ class Music(commands.Cog):
 
                 track = search_results[0]
                 await vc.queue.put_wait(track)
-                await ctx.send(embed=discord.Embed(description=f"➕  Added [{track.title}](PASTE_YOUR_OWN_SUPPORT_SERVER_INVITE_HERE) to the queue.", color=0xFF0000))
+                await ctx.send(embed=discord.Embed(description=f"➕  Added [{track.title}]({track.uri}) to the queue.", color=0xFF0000))
                 if not vc.playing:
                     await vc.play(track)
                     await self.display_player_embed(vc, track, ctx)
@@ -524,7 +524,8 @@ class Music(commands.Cog):
                         c += 1
                         await ctx.message.add_reaction("✅")
 
-                await ctx.send(embed=discord.Embed(description=f"➕ Added **{c}** of **{playlist_length}** tracks from **playlist** **[{playlist_info['name']}](PASTE_YOUR_OWN_SUPPORT_SERVER_INVITE_HERE)** to the queue.", color=0xFF0000))
+                playlist_url = playlist_info.get('external_urls', {}).get('spotify', 'https://discord.gg/5pr8gF3T5p')
+                await ctx.send(embed=discord.Embed(description=f"➕ Added **{c}** of **{playlist_length}** tracks from **playlist** **[{playlist_info['name']}]({playlist_url})** to the queue.", color=0xFF0000))
                 await lmao.delete()
                 
                 if not vc.playing:
@@ -552,7 +553,8 @@ class Music(commands.Cog):
                     if track_results:
                         await vc.queue.put_wait(track_results[0])
 
-                await ctx.send(embed=discord.Embed(description=f"➕ Added all tracks from album **[{album_info['name']}](PASTE_YOUR_OWN_SUPPORT_SERVER_INVITE_HERE)** to the queue.", color=0xFF0000))
+                album_url = album_info.get('external_urls', {}).get('spotify', 'https://discord.gg/5pr8gF3T5p')
+                await ctx.send(embed=discord.Embed(description=f"➕ Added all tracks from album **[{album_info['name']}]({album_url})** to the queue.", color=0xFF0000))
                 if not vc.playing:
                     next_track = await vc.queue.get_wait()
                     await vc.play(next_track)
