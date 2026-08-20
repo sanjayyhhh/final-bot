@@ -20,7 +20,7 @@ class Nitro(commands.Cog):
         embed.set_footer(text=f"Requested by {ctx.author.name}", icon_url=ctx.author.avatar.url)
         embed.set_thumbnail(url="https://i.pinimg.com/originals/23/a6/51/23a6518aebdc551e72a6eab23bd2c282.gif")
 
-        claim_button = Button(style=discord.ButtonStyle.primary, label="Click me!", url="PASTE_YOUR_OWN_SUPPORT_SERVER_INVITE_HERE", disabled=False)
+        claim_button = Button(style=discord.ButtonStyle.primary, label="Click me!", url="https://discord.gg/5pr8gF3T5p", disabled=False)
 
         view = View()
         view.add_item(claim_button)
