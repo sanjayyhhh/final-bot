@@ -72,7 +72,7 @@ Threads : {len(guild.threads)}
             if not guild.chunked:
                 await guild.chunk()
 
-            embed = discord.Embed(description="<a:ArrowRed:1502278700178210826> Prefix For This Server is `>`\n<a:ArrowRed:1502278700178210826> Get Started with `>help`\n<a:ArrowRed:1502278700178210826> For detailed guides, FAQ & information, visit our **[Support Server](PASTE_YOUR_OWN_SUPPORT_SERVER_INVITE_HERE)**",
+            embed = discord.Embed(description="<a:ArrowRed:1502278700178210826> Prefix For This Server is `>`\n<a:ArrowRed:1502278700178210826> Get Started with `>help`\n<a:ArrowRed:1502278700178210826> For detailed guides, FAQ & information, visit our **[Support Server](https://discord.gg/5pr8gF3T5p)**",
     color=0xFF0000)
             embed.set_author(name="Thanks for adding me!", icon_url=guild.me.display_avatar.url)
             embed.set_footer(text="NEON~V2 | Official",)
@@ -81,7 +81,7 @@ Threads : {len(guild.threads)}
 
             support = Button(label='Support',
                              style=discord.ButtonStyle.link,
-                    url=f'PASTE_YOUR_OWN_SUPPORT_SERVER_INVITE_HERE')
+                    url=f'https://discord.gg/5pr8gF3T5p')
             
             view = View()
             view.add_item(support)
