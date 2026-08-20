@@ -61,7 +61,7 @@ class Messages(commands.Cog):
                 f"**Daily Messages** ``:`` {daily_average}\n"
                 f"**Today Messages** ``:`` {today_count}\n"
                 f"**Total Messages** ``:`` {total}\n\n"
-                f"**<a:ArrowRed:1502278700178210826>Upgrade Your Experience With [NEON~V2 Noprefix](PASTE_YOUR_OWN_SUPPORT_SERVER_INVITE_HERE)**"
+                f"**<a:ArrowRed:1502278700178210826>Upgrade Your Experience With [NEON~V2 Noprefix](https://discord.gg/5pr8gF3T5p)**"
             ),
             color=0xFF0000
         )
